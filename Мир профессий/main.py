@@ -14,7 +14,6 @@ gaming = False
 current_buttons = None
 
 def create_question_buttons(screen, question_data, profession, level):
-    """Create buttons for questions with answers"""
     answers = question_data["answers"]
     question_text = constants.FONT.render(question_data["question"], True, colors.WHITE)
     question_text_rect = question_text.get_rect(center=(constants.SCREEN_SIZE[0] // 2, 50))
@@ -53,7 +52,6 @@ def create_question_buttons(screen, question_data, profession, level):
             correct_answers_text, correct_answers_text_rect)
 
 def check_answer(profession, level, button_text, screen):
-    """Check if the answer is correct and handle question progression"""
     global questionNumber, correct_answers, gaming, current_buttons
     file_mapping = {
         1: "enginer_questions.json",
@@ -82,7 +80,6 @@ def check_answer(profession, level, button_text, screen):
                 current_buttons = None
 
 def load_current_question(profession, level):
-    """Load question from the appropriate JSON file"""
     file_mapping = {
         1: "enginer_questions.json",
         2: "builder_questions.json",
