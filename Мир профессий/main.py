@@ -26,28 +26,28 @@ def create_question_buttons(screen, question_data, profession, level):
         answers[0], 
         lambda: check_answer(profession, level, answers[0], screen),
         350, 50)
-    button1.set_delay(0.1)
+    button1.set_delay(0.6)
     button2 = Button(screen, 320, 200,
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button.png"),
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button_hover.png"),
         answers[1],
         lambda: check_answer(profession, level, answers[1], screen),
         350, 50)
-    button2.set_delay(0.3)
+    button2.set_delay(0.8)
     button3 = Button(screen, 320, 300,
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button.png"),
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button_hover.png"),
         answers[2],
         lambda: check_answer(profession, level, answers[2], screen),
         350, 50)
-    button3.set_delay(0.5)
+    button3.set_delay(1)
     button4 = Button(screen, 320, 400,
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button.png"),
         pygame.image.load(f"app/assets/images/{random.choice(colors.BUTTON_COLORS)}_button_hover.png"),
         answers[3],
         lambda: check_answer(profession, level, answers[3], screen),
         350, 50)
-    button4.set_delay(0.7)
+    button4.set_delay(1.2)
     return (button1, button2, button3, button4, 
             question_text, question_text_rect, 
             correct_answers_text, correct_answers_text_rect)
