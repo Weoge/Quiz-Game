@@ -30,12 +30,9 @@ class Button:
         current_time = time.time()
         if not self.visible and current_time - self.creation_time >= self.delay:
             self.visible = True
-
         if not self.visible:
             return
-
         pos = pygame.mouse.get_pos()
-        
         if self.rect.collidepoint(pos):
             self.current_image = self.hover_image
             if pygame.mouse.get_pressed()[0] == 1 and not self.clicked:
@@ -43,19 +40,14 @@ class Button:
                 self.action()
         else:
             self.current_image = self.image
-
         if pygame.mouse.get_pressed()[0] == 0:
             self.clicked = False
-
         self.screen.blit(self.current_image, self.rect)
-        
-        # Render text
         if len(self.text) >= 25:
             text_surface = constants.SMALLER_FONT.render(self.text, True, colors.WHITE)
         elif len(self.text) >= 15:
             text_surface = constants.SMALL_FONT.render(self.text, True, colors.WHITE)
         else:
             text_surface = constants.FONT.render(self.text, True, colors.WHITE)
-        
         text_rect = text_surface.get_rect(center=self.rect.center)
         self.screen.blit(text_surface, text_rect)
