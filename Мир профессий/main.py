@@ -23,7 +23,6 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 def create_question_buttons(screen, question_data, profession, level):
-    """Create buttons for questions with answers"""
     answers = question_data["answers"]
     question_text = constants.FONT.render(question_data["question"], True, colors.WHITE)
     question_text_rect = question_text.get_rect(center=(constants.SCREEN_SIZE[0] // 2, 50))
